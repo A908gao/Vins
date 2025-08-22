@@ -1,8 +1,9 @@
+#!/bin/bash
 
 #######################
 ## ROS2 dependencies ##
 #######################
-sudo apt-get install -y ros-foxy-cv-bridge ros-foxy-librealsense2 ros-foxy-message-filters ros-foxy-image-transport
+sudo apt-get install -y ros-humble-cv-bridge ros-humble-librealsense2 ros-humble-message-filters ros-humble-image-transport
 sudo apt-get install -y libssl-dev libusb-1.0-0-dev pkg-config libgtk-3-dev
 sudo apt-get install -y libglfw3-dev libgl1-mesa-dev libglu1-mesa-dev
 
@@ -25,7 +26,7 @@ sudo apt-get install -y librealsense2-dev && sudo apt-get install -y librealsens
 ####################
 ## ROS2 realsense ##
 ####################
-cd ~/ros/catkin_ws/src
+cd /home/yinzi/rm_gripper_ws/src
 git clone --depth 1 --branch `git ls-remote --tags https://github.com/IntelRealSense/realsense-ros.git | grep -Po "(?<=tags/)3.\d+\.\d+" | sort -V | tail -1` https://github.com/IntelRealSense/realsense-ros.git
 cd ..
 

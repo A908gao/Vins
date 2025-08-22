@@ -45,7 +45,7 @@ add_executable(loop_fusion_node
 # added from DEBUG
 ament_target_dependencies(loop_fusion_node camera_models rclcpp ament_index_cpp std_msgs sensor_msgs visualization_msgs nav_msgs cv_bridge OpenCV) # roslib) # does 'roslib' really need ??
 
-target_link_libraries(loop_fusion_node ${OpenCV_LIBS} ${CERES_LIBRARIES} ) #${catkin_LIBRARIES}  )
+target_link_libraries(loop_fusion_node ${OpenCV_LIBS} ${CERES_LIBRARIES} curl ) #${catkin_LIBRARIES}  )
 
 
 

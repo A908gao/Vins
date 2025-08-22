@@ -11,7 +11,7 @@
 
 #pragma once
 
-#define GPU_MODE 1
+#define GPU_MODE 0
 
 
 #include <cstdio>
@@ -22,11 +22,11 @@
 #include <opencv2/opencv.hpp>
 #include <eigen3/Eigen/Dense>
 
-#ifdef GPU_MODE
-#include <opencv2/cudaoptflow.hpp>
-#include <opencv2/cudaimgproc.hpp>
-#include <opencv2/cudaarithm.hpp>
-#endif
+// #ifdef GPU_MODE
+// #include <opencv2/cudaoptflow.hpp>
+// #include <opencv2/cudaimgproc.hpp>
+// #include <opencv2/cudaarithm.hpp>
+// #endif
 
 #include "camodocal/camera_models/CameraFactory.h"
 #include "camodocal/camera_models/CataCamera.h"
