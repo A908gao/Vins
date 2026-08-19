@@ -41,7 +41,13 @@ CMD_MAVROS="$ROS_ENV && $GEO_ENV && while true; do ros2 run mavros mavros_node -
 CMD_CAMERA="$ROS_ENV && ros2 launch realsense2_camera rs_launch.py enable_infra1:=true enable_infra2:=true enable_color:=false enable_depth:=false depth_module.infra_profile:=640x480x30"
 CMD_IMU="$ROS_ENV && ros2 run vins_bridge imu_scale"
 CMD_VINS="$ROS_ENV && ros2 run vins vins_node $CONFIG"
-CMD_RVIZ="$ROS_ENV && rviz2 -d $RVIZ_CONFIG"
+# VMware 虚拟机虚拟显卡只支持 OpenGL 2.1，RViz2 需要 3.3+；
+# 默认用 Mesa 软件渲染(OpenGL 4.5)。真实硬件/已开启 VMware 3D 加速时设 RViz_SOFTWARE_GL=0 关闭。
+if [ "${RViz_SOFTWARE_GL:-1}" = "1" ]; then
+    CMD_RVIZ="$ROS_ENV && export LIBGL_ALWAYS_SOFTWARE=1 && rviz2 -d $RVIZ_CONFIG"
+else
+    CMD_RVIZ="$ROS_ENV && rviz2 -d $RVIZ_CONFIG"
+fi
 
 open_term() {
     local title="$1"; shift
