@@ -2,10 +2,10 @@
 
 # ============================================================
 # VINS-Fusion 配置：PX4 (MAVLink IMU) + RealSense D430/D435i
-# IMU  : /vins/imu   (由 vins_bridge/imu_scale 从 /mavros/imu/data_raw 转换,
-#                      单位 m/s^2, rad/s)
-# 相机 : /camera/infra1/image_rect_raw
-#        /camera/infra2/image_rect_raw   (红外立体)
+# IMU  : /vins/imu   (由 vins_bridge/imu_scale 从 /mavros/imu/data_raw 桥接,
+#                      该 PX4 分支已发送 SI 单位，默认直通)
+# 相机 : /camera/camera/infra1/image_rect_raw
+#        /camera/camera/infra2/image_rect_raw   (红外立体)
 # ============================================================
 
 #common parameters
@@ -14,8 +14,8 @@ imu: 1
 num_of_cam: 2
 
 imu_topic: "/vins/imu"
-image0_topic: "/camera/infra1/image_rect_raw"
-image1_topic: "/camera/infra2/image_rect_raw"
+image0_topic: "/camera/camera/infra1/image_rect_raw"
+image1_topic: "/camera/camera/infra2/image_rect_raw"
 output_path: "/home/b/Videos/vins_ros2_ws/output/"
 
 cam0_calib: "left.yaml"
