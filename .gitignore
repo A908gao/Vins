@@ -1,0 +1,31 @@
+# ROS2 / colcon build artifacts
+build/
+install/
+log/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+
+# Compiled / object files
+*.o
+*.a
+*.so
+*.so.*
+
+# Python
+__pycache__/
+*.pyc
+
+# VINS runtime output
+output/
+*.csv
+pose_graph/
+
+# Editor / misc
+.vscode/
+*.swp
+*~
