@@ -38,7 +38,7 @@ GEO_ENV="export GEOGRAPHICLIB_DATA=\$HOME/GeographicLib"
 
 # 各任务命令（MAVROS 带自动重连）
 CMD_MAVROS="$ROS_ENV && $GEO_ENV && while true; do ros2 run mavros mavros_node --ros-args -p fcu_url:=$FCU_URL; echo 'MAVROS 已退出，3 秒后重连...'; sleep 3; done"
-CMD_CAMERA="$ROS_ENV && ros2 launch realsense2_camera rs_launch.py enable_infra1:=true enable_infra2:=true enable_color:=false enable_depth:=false"
+CMD_CAMERA="$ROS_ENV && ros2 launch realsense2_camera rs_launch.py enable_infra1:=true enable_infra2:=true enable_color:=false enable_depth:=false depth_module.infra_profile:=640x480x30"
 CMD_IMU="$ROS_ENV && ros2 run vins_bridge imu_scale"
 CMD_VINS="$ROS_ENV && ros2 run vins vins_node $CONFIG"
 CMD_RVIZ="$ROS_ENV && rviz2 -d $RVIZ_CONFIG"

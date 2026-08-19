@@ -41,6 +41,7 @@ extern rclcpp::Publisher<visualization_msgs::msg::Marker>::SharedPtr pub_key_pos
 extern nav_msgs::msg::Path path;
 extern rclcpp::Publisher<visualization_msgs::msg::MarkerArray>::SharedPtr pub_pose_graph; // maybe not used ??
 extern int IMAGE_ROW, IMAGE_COL;
+extern std::shared_ptr<tf2_ros::TransformBroadcaster> tf_broadcaster;
 
 void registerPub(rclcpp::Node::SharedPtr n);
 
