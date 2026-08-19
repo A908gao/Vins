@@ -1,5 +1,7 @@
 # VINS-Fusion
 
+> **中文安装/运行说明（本仓库适配 PX4 + RealSense D430）见 [README_CN.md](README_CN.md)。**
+
 ## ROS2 version of VINS-Fusion.
 
 ### Notices
